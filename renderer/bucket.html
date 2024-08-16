@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AWS Resource Creator Wizard - Bucket Options</title>
+    <link rel="stylesheet" href="../styles/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="../assets/aws-s3-logo.png" alt="AWS Logo" class="logo">
+        </header>
+
+        <main>
+            <h2 class="header2">AWS S3 Bucket Options : </h2>
+            <div class="radio-group-container">
+                <div class="radio-group">
+              
+                    <input type="radio" id="option1" name="bucket-option" value="new" checked>
+                    <label for="option1">Create New Bucket</label>
+                </div>
+                <div class="radio-group">
+                    <input type="radio" id="option2" name="bucket-option" value="existing">
+                    <label for="option2">Use Existing Bucket</label>  
+                </div>   
+            </div>
+            <div class="bucket-name-container">
+                <label for="bucket-name">S3 Bucket Name:</label>
+                <input type="text" id="bucket-name" readonly>
+            </div>
+            <button id="create-resources-button" class="primary-button">Create Resources</button>
+            <p id="status-message" class="error"></p>
+        </main>
+
+        <div class="footer-links">
+            <a href="https://docs.globus.org/premium-storage-connectors/v5.4/aws-s3/" target="_blank" class="prereq-link">Prerequisites before getting started</a>
+            <a href="https://docs.globus.org/guides/tutorials/storage-connectors/aws-s3/" target="_blank" class="tutorial-link">Tutorial</a>
+        </div>
+    </div>
+
+    <script src="scripts/bucketRenderer.js"></script>
+</body>
+</html>

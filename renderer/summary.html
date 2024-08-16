@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AWS Resource Creator Wizard - Summary</title>
+    <link rel="stylesheet" href="../styles/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="../assets/aws-s3-logo.png" alt="AWS Logo" class="logo">
+        </header>
+
+        <main>
+            <h3>AWS Credentials details for Globus</h3>
+            <div class="summary-item">
+                <label>AWS Access Key</label>
+                <div class="copy-container">
+                    <input type="text" id="access-key" readonly>
+                    <button class="copy-button" onclick="copyToClipboard('access-key')">Copy</button>
+                </div>
+            </div>
+            <div class="summary-item">
+                <label>AWS Secret Key</label>
+                <div class="copy-container">
+                    <input type="text" id="secret-key" readonly>
+                    <button class="copy-button" onclick="copyToClipboard('secret-key')">Copy</button>
+                </div>
+            </div>
+            <div class="summary-item">
+                <label>S3 Bucket Name</label>
+                <div class="copy-container">
+                    <input type="text" id="bucket-name" readonly>
+                    <button class="copy-button" onclick="copyToClipboard('bucket-name')">Copy</button>
+                </div>
+            </div>
+            <p id="status-message" class="message"></p>
+        </main>
+
+        <div class="footer-buttons">
+            <button id="open-globus-button" class="primary-button">Open Globus</button>
+            <button id="close-app-button" class="primary-button">Close Application</button>
+        </div>
+    </div>
+
+    <script src="scripts/summaryRenderer.js"></script>
+</body>
+</html>

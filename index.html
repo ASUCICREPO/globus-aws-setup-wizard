@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AWS Resource Creator Wizard</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <div class="container">
+      <header>
+        <img src="./assets/aws-s3-logo.png" alt="Amazon Globas S3" class="logo">
+      </header>
+      <main>
+        <div class="welcome-message">
+          <h1>Welcome to Amazon Globas S3 Wizard!</h1>
+          <p>Effortlessly set up AWS S3 storage for Globus users, enabling streamlined setup process.</p>
+        </div>
+        <div class="buttons" >
+          <button class="get-started" id="get-started">Get started</button>
+        </div>
+
+        <div class="footer-links">
+            <a id="prereq-link" href="https://docs.globus.org/premium-storage-connectors/v5.4/aws-s3/" target="_blank" class="prereq-link">Prerequisites before getting started</a>
+            <a id="tutorial-link" href="https://docs.globus.org/guides/tutorials/storage-connectors/aws-s3/" target="_blank" class="tutorial-link">Tutorial</a>
+        </div>
+    
+      </main>
+    </div>
+    
+     <script>
+        document.getElementById('get-started').addEventListener('click', () => {
+          window.location.href = 'renderer/credentials.html';
+        });
+     </script>
+</body>
+</html>

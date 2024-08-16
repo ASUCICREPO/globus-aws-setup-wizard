@@ -1,0 +1,39 @@
+{
+  "name": "aws-wizard-electron",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder"
+  },
+  "author": "ASU CIC",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "electron": "^31.3.1",
+    "electron-builder": "^24.13.3"
+  },
+  "dependencies": {
+    "@aws-sdk/client-iam": "^3.629.0",
+    "@aws-sdk/client-s3": "^3.629.0",
+    "@aws-sdk/client-sts": "^3.629.0"
+  },
+  "build": {
+    "appId": "com.example.myapp",
+    "mac": {
+      "target": "dmg",
+      "category": "public.app-category.utilities"
+    },
+    "win": {
+      "target": "nsis",
+      "icon": "assets/icons/icon.ico"
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ],
+      "icon": "assets/icons"
+    }
+  }
+}

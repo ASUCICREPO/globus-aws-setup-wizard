@@ -1,0 +1,250 @@
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: 'aws-s3-logo.png';
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .container {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 600px;
+  }
+  
+  .logo {
+    width: 500px; /* Set the desired width */
+    height: auto; /* Maintain aspect ratio */
+    margin-bottom: 20px; /* Add some space below the logo */
+  }
+  
+  .welcome-message h1 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .welcome-message p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 20px;
+  }
+  
+  .header2{
+    font-size: 20px;
+    margin-bottom: 20px;
+    text-align: left;
+    font-family: "Helvetica Neue", Roboto, Arial, sans-serif;
+    display: block;
+    clear: left;
+    padding-right: 10px;
+    line-height: 21px;
+    font-weight: bold;
+    color: #444;
+  }
+
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 200px;
+    margin: 0 auto; /* Center the container horizontally */
+    text-align: center;  
+  }
+  
+  button {
+    background-color: #5558c9;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    text-align: center;  
+  }
+  
+  button:hover {
+    background-color: #4246a6;
+  }
+
+  .footer-links {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 110px;
+    font-size: 14px;
+    color: #2a52be;
+  }
+  
+  .footer-links a {
+    color: #2a52be;
+    text-decoration: none;
+  }
+  
+  .footer-links a:hover {
+    color: #0972d3;
+  }
+  
+  h1, h2, h3 {
+    margin: 10px;
+  }
+
+  .form-group {
+    margin-bottom: 20px;
+    font-size: 16px;
+    text-align: left;
+    font-family: "Helvetica Neue", Roboto, Arial, sans-serif;
+    display: block;
+    clear: left;
+    padding-right: 10px;
+    line-height: 21px;
+    font-weight: bold;
+    font-size: 14px;
+    color: #444;
+  }
+
+  label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+  }
+
+  input {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+  }
+
+  .primary-button {
+      background-color: #034694;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 4px;
+      cursor: pointer;
+  }
+
+  .primary-button:hover {
+      background-color: #0056b3;
+  }
+
+  .error {
+      color: #dc3545;
+      font-weight: bold;
+  }
+
+  .bucket-options-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  .radio-group-container{
+    margin-bottom: 10px;
+  }
+
+  .radio-group {
+      display: flex;
+      align-items: center;
+  }
+
+  .radio-group input{
+    margin-right: 20px;
+    color: #444;
+    width: 20px;
+    margin-bottom: 15px;
+  }
+
+  .radio-group label{
+    font-family: "Helvetica Neue", Roboto, Arial, sans-serif;
+    text-align: left;
+    font-weight: bold;
+    line-height: 21px;
+    font-size: 14px;
+    margin-bottom: 15px;
+    /* margin-bottom: 20px; */
+    width: 500px;
+  }
+
+  .bucket-name-container {
+      display: flex;
+      align-items: center;
+  }
+
+  .bucket-name-container label{
+    text-align: center;
+    font-family: "Helvetica Neue", Roboto, Arial, sans-serif;
+    display: block;
+    clear: left;
+    /* padding-right: 10px; */
+    line-height: 21px;
+    font-weight: bold;
+    font-size: 14px;
+    margin-right: 20px;
+    margin-bottom: 25px;
+    color: #444;
+  }
+
+  .bucket-name-container input{
+    margin-bottom: 25px;
+    font-size: 14px;
+    width: 400px;
+  }
+  
+  .copy-container {
+      display: flex;
+      align-items: center;
+  }
+
+  .copy-container input {
+      flex-grow: 1;
+      margin-right: 10px;
+  }
+
+  .summary-item {
+    margin-bottom: 10px;
+  }
+
+  .summary-item label {
+    text-align: left;
+    font-family: "Helvetica Neue", Roboto, Arial, sans-serif;
+    display: block;
+    clear: left;
+    padding-right: 10px;
+    line-height: 21px;
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 7px;
+    color: #444;
+  }
+
+  .message {
+    color: green; /* Default message color */
+    font-weight: bold;
+  }
+
+  .footer-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+    font-size: 14px;
+    color: #2a52be;
+  }
+  
+  .footer-buttons a {
+    color: #2a52be;
+    text-decoration: none;
+  }
+  
+  .footer-buttons a:hover {
+    color: #0972d3;
+  }
