@@ -2,7 +2,6 @@ document.getElementById('next-button').addEventListener('click', async () => {
   console.log("Before ")
   const accessKey = document.getElementById('access-key').value;
   const secretKey = document.getElementById('secret-key').value;
-  console.log("accessKey")
   if (!accessKey || !secretKey) {
       document.getElementById('error-message').textContent = 'Please enter both AWS Access Key and Secret Key';
       return;

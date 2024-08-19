@@ -1,7 +1,29 @@
 const { contextBridge, ipcRenderer } = require('electron');
 const { STSClient, GetCallerIdentityCommand } = require("@aws-sdk/client-sts");
-const { S3Client, HeadBucketCommand, CreateBucketCommand } = require("@aws-sdk/client-s3");
+const { S3Client, HeadBucketCommand, CreateBucketCommand, ListBucketsCommand, GetBucketLocationCommand} = require("@aws-sdk/client-s3");
 const { IAMClient, CreateUserCommand, CreatePolicyCommand, AttachUserPolicyCommand, CreateAccessKeyCommand } = require("@aws-sdk/client-iam");
+
+const s3Client1 = new S3Client({});
+
+async function listBuckets() {
+  try {
+    const data = await s3Client1.send(new ListBucketsCommand({}));
+    return data.Buckets.map(bucket => bucket.Name);
+  } catch (error) {
+    console.error("Error listing buckets:", error);
+    return [];
+  }
+}
+
+async function getBucketLocation(bucketName) {
+  try {
+    const data = await s3Client1.send(new GetBucketLocationCommand({ Bucket: bucketName }));
+    return data.LocationConstraint || "us-east-1"; // Default region if location is not specified
+  } catch (error) {
+    console.error(`Error getting location for bucket ${bucketName}:`, error);
+    return null;
+  }
+}
 
 contextBridge.exposeInMainWorld('api', {
   validateCredentials: async (accessKey, secretKey) => {
@@ -91,7 +113,16 @@ contextBridge.exposeInMainWorld('api', {
           CreateBucketConfiguration: { LocationConstraint: 'us-east-2' }
         }));
       } else {
-        await s3Client.send(new HeadBucketCommand({ Bucket: bucketName }));
+
+        const buckets = await listBuckets();
+        let region = null
+        if (buckets.includes(bucketName)) {
+          region = await getBucketLocation(bucketName);
+          console.log(`Bucket ${bucketName} is located in region: ${region}`);
+        } else {
+          console.log(`Bucket ${bucketName} not found in your account.`);
+          throw new Error(`${bucketName} doesn't exist`); 
+        }
       }
 
       const userName = `user-for-${bucketName}`;
